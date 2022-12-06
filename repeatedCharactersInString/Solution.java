@@ -1,6 +1,5 @@
 //Buggy code
 //The code is supposed to return the first repeated character, not the last one.
-//TODO: The program should return -1 if no match is found
 
 import java.util.*;
 class Solution {
@@ -18,6 +17,10 @@ class Solution {
                 best_char = (char)((int)'a' + i);
                 best_res  = occurrences[i];
             }
+        }
+
+        if(best_res == 1){
+            return "No repeated characters in the given string found";
         }
 
         return Character.toString(best_char);
