@@ -1,5 +1,6 @@
 //Buggy code
 //The code is supposed to return the first repeated character, not the last one.
+//TODO: The program should return -1 if no match is found
 
 import java.util.*;
 class Solution {
@@ -12,8 +13,8 @@ class Solution {
         char best_char = 'a';
         int  best_res  = 0;
 
-        for (int i = 1; i < 26; i++) {
-            if (occurrences[i] >= best_res) {
+        for (int i = 0; i < 26; i++) {
+            if (occurrences[i] > best_res) {
                 best_char = (char)((int)'a' + i);
                 best_res  = occurrences[i];
             }
@@ -24,7 +25,8 @@ class Solution {
 
     public static void main(String[] args){
         System.out.println("Program Starts");
-        String s = solution("helloo");
-        System.out.println(s);
+        System.out.println(solution("helo")); //This is producing wrong result
+        System.out.println(solution("hello"));
+        System.out.println(solution("helloo"));
     }
 }
